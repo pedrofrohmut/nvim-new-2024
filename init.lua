@@ -5,3 +5,4 @@ require "my.options"
 require "my.keymaps"
 
 require "my.plugins.telescope"
+require "my.plugins.treesitter"
