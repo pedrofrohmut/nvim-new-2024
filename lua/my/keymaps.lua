@@ -1,0 +1,166 @@
+vim.g.mapleader = " "
+
+local map = vim.keymap.set
+
+-- Function Keys
+map("n", "<F1>", ":vertical help ")
+map("n", "<F2>", ":verbose map ")
+
+-- File Explorer
+map("n", "<leader>fe", vim.cmd.Explore)
+
+-- Easy Register Copy/Cut to/from System Clipboard (:checkhealth if not working)
+map("v", "<leader>sy", "\"+y")
+map("v", "<leader>sd", "\"+d")
+map("n", "<leader>sp", "\"+p")
+
+-- Do not override current register on v_paste
+map("v", "p", [["_dP]])
+
+-- Unsetters: Do nothing to remove unwanted default behavior
+map({"n", "v"}, "<Space>",   "<Nop>", { silent = true })
+map("i",        "<C-j>",     "<Nop>")
+map("n",        "R",         "<Nop>") -- Disable WTF mode
+map({"n", "v"}, "<C-Space>", "<Nop>", { silent = true })
+map("n",        "<C-Enter>", "<Nop>")
+
+-- Fix C-i so you can keymap Tab Key
+map("n", "<C-i>", "<C-i>")
+
+-- Redo on better keymapping
+map("n", "U", "<C-r>")
+
+-- Reset command-line
+map("n", "<C-c>", "<cmd>set cmdheight=1<Enter><cmd>echo ''<Enter>")
+
+-- Delete in insert mode
+map("i", "<C-l>", "<Del>")
+map("i", "<C-h>", "<BS>")
+
+-- Insert lines/spaces in Normal Mode
+map("n", "<Enter>", "i<CR><Esc>")
+
+-- Normal Enter/CR when needed
+map("n", "<A-Enter>", "<CR>")
+
+-- Unjoin lines (Opposite of J)
+map("n", "<C-Enter>", "WWi<Enter><Esc>")
+
+-- Insert spaces in normal mode
+map("n", "<C-Space>", "i<Space><Esc>l")
+
+-- Quickfix
+map("n", "<A-n>", vim.cmd.cnext)
+map("n", "<A-p>", vim.cmd.cprev)
+map("n", "<A-c>", vim.cmd.cclose)
+map("n", "<A-o>", vim.cmd.copen)
+
+-- MyPlugin: Closing cheracter -------------------------------------------------
+
+-- Closing character with <Enter> / <CR>
+map("i", "(<CR>", "(<CR>)<Esc>ko")
+map("i", "[<CR>", "[<CR>]<Esc>ko")
+map("i", "[[<CR>", "[[<CR>]]<Esc>ko")
+map("i", "{<CR>", "{<CR>}<Esc>ko")
+map("i", "({<CR>", "({<CR>})<Esc>ko")
+map("i", "`<CR>",  "<CR>`<Esc>ko<Tab>")
+map("i", "(`<CR>", "(``)<Esc>hi<CR><Esc>ko<Tab>")
+
+-- Add spaces inside closing character (lacking in autopairs plugin)
+map("i", "( ", "(  )<Esc>hi")
+map("i", "[ ", "[  ]<Esc>hi")
+map("i", "[[ ", "[[  ]]<Esc>hi")
+map("i", "{ ", "{  }<Esc>hi")
+map("i", "({ ", "({  })<Esc>hi")
+
+-- Buffers ---------------------------------------------------------------------
+
+map("n", "[b", vim.cmd.bprevious)
+map("n", "]b", vim.cmd.bnext)
+map("n", "<C-b>", ":buffers<CR>:b ")
+
+-- Tabs ------------------------------------------------------------------------
+
+-- New Tab
+map("n", "<leader>tc", ":tabnew<CR>", { silent = true })
+
+-- Close Tabs
+map("n", "<leader>tq", ":tabclose<CR>", { silent = true })
+map("n", "<leader>to", ":tabonly<CR>", { silent = true })
+
+-- Move Tabs - Left/Right
+map("n", "<leader>th", ":-tabmove<CR>", { silent = true })
+map("n", "<leader>tl", ":+tabmove<CR>", { silent = true })
+
+-- Go To - Next/Prev
+map("n", "<C-n>",      ":tabnext<CR>",     { silent = true })
+map("n", "<C-p>",      ":tabprevious<CR>", { silent = true })
+
+-- Windows ---------------------------------------------------------------------
+
+-- Move focus between windows
+map("n", "<C-h>", "<C-w>h")
+map("n", "<C-j>", "<C-w>j")
+map("n", "<C-k>", "<C-w>k")
+map("n", "<C-l>", "<C-w>l")
+
+-- Resizing
+map("n", "<A-Up>",    "3<C-w>+") -- Up
+map("n", "<A-Down>",  "3<C-w>-") -- Down
+map("n", "<A-Left>",  "3<C-w>>") -- Left
+map("n", "<A-Right>", "3<C-w><") -- Right
+
+-- Change current window to a new tab
+map("n", "<leader>wt", "<C-w>T")
+
+-- Closes every other window and every other tab
+map("n", "<leader>wo", function()
+    vim.cmd.tabonly()
+    vim.cmd.only()
+    vim.cmd.echo("''")
+end)
+
+-- Jumping/Scrolling -----------------------------------------------------------
+
+map({"n", "v"}, "M", "%")  -- Easier to press %
+map("n",        "H", "^")  -- First non-blank character
+map("n",        "L", "g_") -- Last non-blank character
+
+-- Emacs inspired maps
+map("n", "<A-a>", "k^") -- First character of previous line
+map("n", "<A-e>", "2$") -- Last character of next line
+
+-- Scrolling Vertical
+map("n", "<A-k>", "12<C-y>")
+map("n", "<A-j>", "12<C-e>")
+
+-- Scrolling Vertical 2x
+map("n", "<C-d>", "28<C-e>M")
+map("n", "<C-u>", "28<C-y>M")
+
+-- Scrolling Horizontal
+map("n", "<A-h>", "3zh")
+map("n", "<A-l>", "3zl")
+
+-- Center when jumping
+map("n", "G",  "Gzz")
+map("n", "`0", "`0zz")
+map("n", "'0", "'0zz")
+
+-- ### String Utils ###########################################################
+
+-- Find-Replace
+map("n", "<leader>ss", ":%s/")
+map("v", "<leader>ss", ":s/")
+
+-- Find-Replace but auto-fills the with last yanked
+map("n", "<leader>sh", ':%s/<C-r>"/')
+map("v", "<leader>sh", 'y<Esc>:%s/<C-r>"/')
+
+-- Sort
+map("v", "<leader>sp", ":sort<Enter>")
+
+local f = require("my.utils.string-functions")
+
+-- Remove trailing spaces
+map("n", "<leader>st", f.remove_trailing)
