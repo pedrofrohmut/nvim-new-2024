@@ -1,6 +1,7 @@
 local map = vim.keymap.set
 local builtin = require("telescope.builtin")
 local actions = require("telescope.actions")
+local themes = require("telescope.themes")
 
 require("telescope").setup({
     defaults = {
@@ -20,30 +21,25 @@ require("telescope").setup({
             }
         },
     },
-    pickers = {},
+    pickers = {
+        find_files = {
+            hidden = true
+        },
+        buffers = { 
+            ignore_current_buffer = true, 
+            only_cwd = true, 
+            sort_mru = true 
+        }
+    },
     extensions = {}
 })
 require("telescope").load_extension("fzf")
 
-map("n", "<leader>ff", function() builtin.find_files({ hidden = true }) end)
+map("n", "<leader>ff", builtin.find_files)
 map("n", "<leader>fg", builtin.live_grep)
 map("n", "<leader>fb", builtin.buffers)
 map("n", "<leader>fh", builtin.help_tags)
 map("n", "<leader>fk", builtin.keymaps)
-
-local no_preview = function()
-    return require("telescope.themes").get_dropdown({
-        borderchars = {
-                      { "─",  "│", "─", "│", "┌", "┐", "┘", "└"},
-            prompt  = { "─",  "│", " ", "│", "┌", "┐", "│", "│"},
-            results = { "─",  "│", "─", "│", "├", "┤", "┘", "└"},
-            preview = { "─",  "│", "─", "│", "┌", "┐", "┘", "└"},
-        },
-        width = 0.8,
-        previewer = false,
-        prompt_title = false
-    })
-end
 
 -- Find files with hidden and gitignored
 map("n", "<leader>fa", function()
@@ -67,7 +63,13 @@ map("n", "<C-s>", grep_search)
 
 map("n", "<C-f>", builtin.current_buffer_fuzzy_find)
 
-map("n", "<C-q>", function() builtin.find_files(no_preview()) end)
+map("n", "<C-q>", function() 
+    builtin.find_files(themes.get_dropdown({ previewer = false })) 
+end)
+
+map("n", "<C-b>", function() 
+    builtin.buffers(themes.get_dropdown({ previewer = false })) 
+end)
 
 -- LSP Mappings
 --vim.keymap.set("n", "<leader>gd", builtin.lsp_definitions)
