@@ -48,4 +48,4 @@ opt.completeopt    = { "menu", "menuone", "noselect" }
 vim.cmd [[ set path=$PWD/** ]]
 
 -- New Stuff ------------------------------------------------------------------
-vim.g.netrw_liststyle = 3 -- Tree Style Netrw
+--vim.g.netrw_liststyle = 3 -- Tree Style Netrw

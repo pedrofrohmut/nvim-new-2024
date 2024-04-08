@@ -6,3 +6,4 @@ require "my.keymaps"
 
 require "my.plugins.telescope"
 require "my.plugins.treesitter"
+require "my.plugins.nerdtree"

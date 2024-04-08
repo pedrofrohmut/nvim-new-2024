@@ -19,15 +19,19 @@ local plugins = {
     -- use "folke/tokyonight.nvim"
     -- use "jacoborus/tender.vim"
     -- use "mhartington/oceanic-next"
-    
+
     -- Telescope
-    { 'nvim-telescope/telescope.nvim', tag = '0.1.6', 
-      dependencies = { 'nvim-lua/plenary.nvim' }
+    { 
+        "nvim-telescope/telescope.nvim", tag = "0.1.6", 
+        dependencies = { "nvim-lua/plenary.nvim" }
     },
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 
     -- Treesitter
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+
+    -- Tree file explorer
+    { "preservim/nerdtree" },
 }
 
 require("lazy").setup(plugins, opts)
