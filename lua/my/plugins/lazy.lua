@@ -14,6 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 local opts = {}
 
 local plugins = {
+    { 'nvim-telescope/telescope.nvim', tag = '0.1.6', 
+      dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+
     -- Color Schemes (comment it out the one you like be not using)
     { "sainnhe/sonokai" },
     -- use "folke/tokyonight.nvim"

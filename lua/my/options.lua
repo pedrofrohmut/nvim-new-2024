@@ -36,7 +36,8 @@ opt.wrap           = false
 opt.textwidth      = 100
 
 -- Files
-opt.fileformat     = "unix"
+--opt.fileformat     = "unix"
+--vim.cmd [[ set ff=unix fixeol ]]
 opt.backup         = false
 opt.writebackup    = false
 opt.autoread       = true

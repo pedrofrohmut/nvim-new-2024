@@ -50,10 +50,10 @@ map("n", "<C-Enter>", "WWi<Enter><Esc>")
 map("n", "<C-Space>", "i<Space><Esc>l")
 
 -- Quickfix
-map("n", "<A-n>", vim.cmd.cnext)
-map("n", "<A-p>", vim.cmd.cprev)
-map("n", "<A-c>", vim.cmd.cclose)
-map("n", "<A-o>", vim.cmd.copen)
+map("n", "<leader>qq", vim.cmd.cclose)
+map("n", "<leader>qo", vim.cmd.copen)
+map("n", "[f", vim.cmd.cprev)
+map("n", "]f", vim.cmd.cnext)
 
 -- MyPlugin: Closing cheracter -------------------------------------------------
 
@@ -112,6 +112,9 @@ map("n", "<A-Right>", "3<C-w><") -- Right
 
 -- Change current window to a new tab
 map("n", "<leader>wt", "<C-w>T")
+
+-- Close other windows
+map("n", "<A-o>", "<C-w>o")
 
 -- Closes every other window and every other tab
 map("n", "<leader>wo", function()
