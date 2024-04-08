@@ -24,18 +24,18 @@ local plugins = {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.6",
-        dependencies = { "nvim-lua/plenary.nvim" }
+        dependencies = { "nvim-lua/plenary.nvim" },
     },
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 
     -- Treesitter
-    { "nvim-treesitter/nvim-treesitter",          build = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
     -- Tree file explorer
     { "preservim/nerdtree" },
 
     -- Lua line
-    { "nvim-lualine/lualine.nvim", },
+    { "nvim-lualine/lualine.nvim" },
 
     -- LSP & Mason
     {
@@ -45,7 +45,10 @@ local plugins = {
     },
 
     -- Formatter
-    { 'stevearc/conform.nvim', opts = {}, },
+    { "stevearc/conform.nvim", opts = {} },
+
+    -- Linter
+    { "mfussenegger/nvim-lint" },
 }
 
 require("lazy").setup(plugins, opts)
