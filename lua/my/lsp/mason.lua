@@ -2,12 +2,12 @@ require("mason").setup()
 
 require("mason-lspconfig").setup({
     ensure_installed = {
-        "clangd",               -- C/C++
-        "cssls",                -- CSS
-        "html",                 -- HTML
-        "lua_ls",               -- Lua
-        "pyright",              -- Python
-        "tsserver",             -- Typescript/Javascript
+        "clangd",   -- C/C++
+        "cssls",    -- CSS
+        "html",     -- HTML
+        "lua_ls",   -- Lua
+        "pyright",  -- Python
+        "tsserver", -- Typescript/Javascript
     }
 
     --"omnisharp",            -- CSharp

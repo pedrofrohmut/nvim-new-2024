@@ -4,7 +4,7 @@
 require("lspconfig").lua_ls.setup {
     on_init = function(client)
         local path = client.workspace_folders[1].name
-        if vim.loop.fs_stat(path.."/.luarc.json") or vim.loop.fs_stat(path.."/.luarc.jsonc") then
+        if vim.loop.fs_stat(path .. "/.luarc.json") or vim.loop.fs_stat(path .. "/.luarc.jsonc") then
             return
         end
 
@@ -82,7 +82,7 @@ require("lspconfig").omnisharp.setup {
 
 -- Typescript
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
-require'lspconfig'.tsserver.setup {
+require 'lspconfig'.tsserver.setup {
     cmd = { "typescript-language-server", "--stdio" },
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
 }

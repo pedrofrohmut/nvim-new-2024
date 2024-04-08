@@ -1,4 +1,4 @@
-vim.g.NERDTreeIgnore = {
+vim.g.NERDTreeIgnore      = {
     "node_modules",
     "obj",
     "bin",
@@ -28,6 +28,6 @@ vim.g.NERDTreeMinimalUI   = 1
 vim.g.NERDTreeMinimalMenu = 1
 
 vim.keymap.set("n", "<leader>ft",
-        "<cmd>NERDTreeFind<Enter><cmd>NERDTreeRefreshRoot<Enter>")
+    "<cmd>NERDTreeFind<Enter><cmd>NERDTreeRefreshRoot<Enter>")
 vim.keymap.set("n", "<A-8>",
-        "<cmd>NERDTreeToggle<Enter><cmd>NERDTreeRefreshRoot<Enter>")
+    "<cmd>NERDTreeToggle<Enter><cmd>NERDTreeRefreshRoot<Enter>")

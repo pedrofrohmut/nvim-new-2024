@@ -1,6 +1,6 @@
 require("lualine").setup {
     options = {
-        component_separators = { left = "|", right = "|"},
+        component_separators = { left = "|", right = "|" },
     },
     sections = {
         -- Left side a, b, c
@@ -47,7 +47,7 @@ require("lualine").setup {
             },
             "encoding"
         },
-        lualine_y = {"progress", "location"},
+        lualine_y = { "progress", "location" },
         lualine_z = {}
     },
     inactive_sections = {
@@ -68,7 +68,7 @@ require("lualine").setup {
                 }
             }
         },
-        lualine_x = {"location"},
+        lualine_x = { "location" },
         lualine_y = {},
         lualine_z = {}
     },

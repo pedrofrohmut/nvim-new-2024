@@ -14,7 +14,7 @@ autocmd("FileType", {
 
 -- Set 2 for exceptions
 autocmd("FileType", {
-    group = "FileTypeGroup", pattern = {"html"}, command = "setlocal shiftwidth=2 "})
+    group = "FileTypeGroup", pattern = { "html" }, command = "setlocal shiftwidth=2 " })
 
 -- CursorLine Group
 augroup("CursorLine", { clear = true })
@@ -29,5 +29,3 @@ autocmd("WinLeave", {
 
 -- Remove Trailing White Spaces onSave (And dont show errors)
 autocmd("BufWritePre", { pattern = "*", command = ":%s/\\s\\+$//e" })
-
-

@@ -2,7 +2,7 @@
     VIM OPTIONS   :help options
 ]]
 
-local opt = vim.opt
+local opt          = vim.opt
 
 -- Indentation and tabing
 opt.expandtab      = true

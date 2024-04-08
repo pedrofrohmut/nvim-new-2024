@@ -1,20 +1,5 @@
 local map = vim.keymap.set
 
--- Mappings --------------------------------------------------------------------
-
-map("n", "<F11>", function()
-    vim.cmd.LspRestart()
-    vim.cmd.echo("'Lsp Restarted'")
-end)
-map("n", "<F12>",       vim.cmd.LspInfo,           { silent = true })
-map("n", "[d",          vim.diagnostic.goto_prev,  { silent = true })
-map("n", "]d",          vim.diagnostic.goto_next,  { silent = true })
-map("n", "<leader>cdo", vim.diagnostic.open_float, { silent = true })
-map("n", "<leader>cdl", vim.diagnostic.setloclist, { silent = true })
-map("n", "<leader>cdd", vim.diagnostic.disable,    { silent = true })
-map("n", "<leader>cde", vim.diagnostic.enable,     { silent = true })
-map("n", "<leader>cf",  vim.lsp.buf.format,        { silent = true })
-
 -- Config ----------------------------------------------------------------------
 
 --vim.diagnostic.config({
@@ -25,6 +10,20 @@ map("n", "<leader>cf",  vim.lsp.buf.format,        { silent = true })
 --    severity_sort = false,
 --})
 
+-- Mappings --------------------------------------------------------------------
+
+map("n", "<F11>", function()
+    vim.cmd.LspRestart()
+    vim.cmd.echo("'Lsp Restarted'")
+end)
+map("n", "<F12>", vim.cmd.LspInfo, { silent = true })
+map("n", "[d", vim.diagnostic.goto_prev, { silent = true })
+map("n", "]d", vim.diagnostic.goto_next, { silent = true })
+map("n", "<leader>cdo", vim.diagnostic.open_float, { silent = true })
+map("n", "<leader>cdl", vim.diagnostic.setloclist, { silent = true })
+map("n", "<leader>cdd", vim.diagnostic.disable, { silent = true })
+map("n", "<leader>cde", vim.diagnostic.enable, { silent = true })
+
 -- LspAttach -------------------------------------------------------------------
 
 -- Use LspAttach autocommand to only map the following keys
@@ -32,7 +31,6 @@ map("n", "<leader>cf",  vim.lsp.buf.format,        { silent = true })
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     callback = function(ev)
-
         -- Enable completion triggered by <c-x><c-o>
         vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 

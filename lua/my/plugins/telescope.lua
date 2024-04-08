@@ -25,10 +25,10 @@ require("telescope").setup({
         find_files = {
             hidden = true
         },
-        buffers = { 
-            ignore_current_buffer = true, 
-            only_cwd = true, 
-            sort_mru = true 
+        buffers = {
+            ignore_current_buffer = true,
+            only_cwd = true,
+            sort_mru = true
         }
     },
     extensions = {}
@@ -47,7 +47,7 @@ map("n", "<leader>fa", function()
 end)
 
 local grep_search = function()
-    local ok_grep, err = pcall(function ()
+    local ok_grep, err = pcall(function()
         builtin.grep_string({ search = vim.fn.input("Grep > ") })
     end)
 
@@ -63,12 +63,12 @@ map("n", "<C-s>", grep_search)
 
 map("n", "<C-f>", builtin.current_buffer_fuzzy_find)
 
-map("n", "<C-q>", function() 
-    builtin.find_files(themes.get_dropdown({ previewer = false })) 
+map("n", "<C-q>", function()
+    builtin.find_files(themes.get_dropdown({ previewer = false }))
 end)
 
-map("n", "<C-b>", function() 
-    builtin.buffers(themes.get_dropdown({ previewer = false })) 
+map("n", "<C-b>", function()
+    builtin.buffers(themes.get_dropdown({ previewer = false }))
 end)
 
 -- LSP Mappings

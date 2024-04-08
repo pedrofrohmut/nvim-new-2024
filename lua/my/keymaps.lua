@@ -2,6 +2,16 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 
+-- Unsetters: Do nothing to remove unwanted default behavior
+map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+map("i", "<C-j>", "<Nop>")
+map("n", "R", "<Nop>")                -- Disable WTF mode
+map({ "n", "v" }, "<C-Space>", "<Nop>", { silent = true })
+map("n", "<C-Enter>", "<Nop>")
+
+-- Indent
+map({ "n", "v" }, "<Space><Space>", "=")
+
 -- Function Keys
 map("n", "<F1>", ":vertical help ")
 map("n", "<F2>", ":verbose map ")
@@ -16,13 +26,6 @@ map("n", "<leader>sp", "\"+p")
 
 -- Do not override current register on v_paste
 map("v", "p", [["_dP]])
-
--- Unsetters: Do nothing to remove unwanted default behavior
-map({"n", "v"}, "<Space>",   "<Nop>", { silent = true })
-map("i",        "<C-j>",     "<Nop>")
-map("n",        "R",         "<Nop>") -- Disable WTF mode
-map({"n", "v"}, "<C-Space>", "<Nop>", { silent = true })
-map("n",        "<C-Enter>", "<Nop>")
 
 -- Fix C-i so you can keymap Tab Key
 map("n", "<C-i>", "<C-i>")
@@ -63,7 +66,7 @@ map("i", "[<CR>", "[<CR>]<Esc>ko")
 map("i", "[[<CR>", "[[<CR>]]<Esc>ko")
 map("i", "{<CR>", "{<CR>}<Esc>ko")
 map("i", "({<CR>", "({<CR>})<Esc>ko")
-map("i", "`<CR>",  "<CR>`<Esc>ko<Tab>")
+map("i", "`<CR>", "<CR>`<Esc>ko<Tab>")
 map("i", "(`<CR>", "(``)<Esc>hi<CR><Esc>ko<Tab>")
 
 -- Add spaces inside closing character (lacking in autopairs plugin)
@@ -93,8 +96,8 @@ map("n", "<leader>th", ":-tabmove<CR>", { silent = true })
 map("n", "<leader>tl", ":+tabmove<CR>", { silent = true })
 
 -- Go To - Next/Prev
-map("n", "<C-n>",      ":tabnext<CR>",     { silent = true })
-map("n", "<C-p>",      ":tabprevious<CR>", { silent = true })
+map("n", "<C-n>", ":tabnext<CR>", { silent = true })
+map("n", "<C-p>", ":tabprevious<CR>", { silent = true })
 
 -- Windows ---------------------------------------------------------------------
 
@@ -105,9 +108,9 @@ map("n", "<C-k>", "<C-w>k")
 map("n", "<C-l>", "<C-w>l")
 
 -- Resizing
-map("n", "<A-Up>",    "3<C-w>+") -- Up
-map("n", "<A-Down>",  "3<C-w>-") -- Down
-map("n", "<A-Left>",  "3<C-w>>") -- Left
+map("n", "<A-Up>", "3<C-w>+")    -- Up
+map("n", "<A-Down>", "3<C-w>-")  -- Down
+map("n", "<A-Left>", "3<C-w>>")  -- Left
 map("n", "<A-Right>", "3<C-w><") -- Right
 
 -- Change current window to a new tab
@@ -125,9 +128,9 @@ end)
 
 -- Jumping/Scrolling -----------------------------------------------------------
 
-map({"n", "v"}, "M", "%")  -- Easier to press %
-map({"n", "v"}, "H", "^")  -- First non-blank character
-map({"n", "v"}, "L", "g_") -- Last non-blank character
+map({ "n", "v" }, "M", "%") -- Easier to press %
+map({ "n", "v" }, "H", "^") -- First non-blank character
+map({ "n", "v" }, "L", "g_") -- Last non-blank character
 
 -- Emacs inspired maps
 map("n", "<A-a>", "k^") -- First character of previous line
@@ -146,11 +149,11 @@ map("n", "<A-h>", "3zh")
 map("n", "<A-l>", "3zl")
 
 -- Center when jumping
-map("n", "G",  "Gzz")
+map("n", "G", "Gzz")
 map("n", "`0", "`0zz")
 map("n", "'0", "'0zz")
 
--- ### String Utils ###########################################################
+-- String Utils ----------------------------------------------------------------
 
 -- Find-Replace
 map("n", "<leader>ss", ":%s/")
