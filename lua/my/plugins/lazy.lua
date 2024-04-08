@@ -21,8 +21,8 @@ local plugins = {
     -- use "mhartington/oceanic-next"
 
     -- Telescope
-    { 
-        "nvim-telescope/telescope.nvim", tag = "0.1.6", 
+    {
+        "nvim-telescope/telescope.nvim", tag = "0.1.6",
         dependencies = { "nvim-lua/plenary.nvim" }
     },
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -32,6 +32,16 @@ local plugins = {
 
     -- Tree file explorer
     { "preservim/nerdtree" },
+
+    -- Lua line
+    { "nvim-lualine/lualine.nvim", },
+
+    -- LSP & Mason
+    {
+        "neovim/nvim-lspconfig",
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+    },
 }
 
 require("lazy").setup(plugins, opts)

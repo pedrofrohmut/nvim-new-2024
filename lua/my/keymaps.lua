@@ -77,7 +77,7 @@ map("i", "({ ", "({  })<Esc>hi")
 
 map("n", "[b", vim.cmd.bprevious)
 map("n", "]b", vim.cmd.bnext)
-map("n", "<C-b>", ":buffers<CR>:b ")
+map("n", "<leader>bb", ":buffers<CR>:b ")
 
 -- Tabs ------------------------------------------------------------------------
 
@@ -126,8 +126,8 @@ end)
 -- Jumping/Scrolling -----------------------------------------------------------
 
 map({"n", "v"}, "M", "%")  -- Easier to press %
-map("n",        "H", "^")  -- First non-blank character
-map("n",        "L", "g_") -- Last non-blank character
+map({"n", "v"}, "H", "^")  -- First non-blank character
+map({"n", "v"}, "L", "g_") -- Last non-blank character
 
 -- Emacs inspired maps
 map("n", "<A-a>", "k^") -- First character of previous line
