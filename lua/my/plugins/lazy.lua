@@ -67,6 +67,9 @@ local plugins = {
         "rafamadriz/friendly-snippets",
     },
 
+    -- Symbols (Tagbar)
+    { "hedyhli/outline.nvim" },
+
     -- Autopairs
     { "windwp/nvim-autopairs", event = "InsertEnter" },
 

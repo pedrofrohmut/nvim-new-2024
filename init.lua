@@ -12,6 +12,7 @@ require("my.lsp.config")
 require("my.lsp.formatter")
 require("my.lsp.linter")
 require("my.lsp.completions")
+require("my.lsp.symbols_outline")
 
 require("my.plugins.telescope")
 require("my.plugins.nerdtree")

@@ -1,9 +1,9 @@
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Servers ---------------------------------------------------------------------
 
 -- Lua/Lua_LS
-require("lspconfig").lua_ls.setup {
+require("lspconfig").lua_ls.setup({
     on_init = function(client)
         local path = client.workspace_folders[1].name
         if vim.loop.fs_stat(path .. "/.luarc.json") or vim.loop.fs_stat(path .. "/.luarc.jsonc") then
@@ -14,36 +14,36 @@ require("lspconfig").lua_ls.setup {
             runtime = {
                 -- Tell the language server which version of Lua you are using
                 -- (most likely LuaJIT in the case of Neovim)
-                version = "LuaJIT"
+                version = "LuaJIT",
             },
             -- Make the server aware of Neovim runtime files
             workspace = {
                 checkThirdParty = false,
                 library = {
-                    vim.env.VIMRUNTIME
+                    vim.env.VIMRUNTIME,
                     -- Depending on the usage, you might want to add additional paths here.
                     -- "${3rd}/luv/library"
                     -- "${3rd}/busted/library",
-                }
+                },
                 -- or pull in all of "runtimepath". NOTE: this is a lot slower
                 -- library = vim.api.nvim_get_runtime_file("", true)
-            }
+            },
         })
     end,
     settings = {
         Lua = {
             diagnostics = {
-                globals = { "vim", "use" }
-            }
-        }
+                globals = { "vim", "use" },
+            },
+        },
     },
     capabilities = capabilities,
-}
+})
 
 -- CSharp/Omnisharp
 -- TODO: Config csharp with: Omnisharp-Extended-Lsp. at: https://github.com/Hoffs/omnisharp-extended-lsp.nvim
 -- This config: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#omnisharp
-require("lspconfig").omnisharp.setup {
+require("lspconfig").omnisharp.setup({
     --cmd = { "dotnet", "/path/to/omnisharp/OmniSharp.dll" },
     cmd = { "omnisharp" },
 
@@ -83,12 +83,17 @@ require("lspconfig").omnisharp.setup {
     analyze_open_documents_only = false,
 
     capabilities = capabilities,
-}
+})
 
 -- Typescript
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
-require 'lspconfig'.tsserver.setup {
+require("lspconfig").tsserver.setup({
     cmd = { "typescript-language-server", "--stdio" },
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
     capabilities = capabilities,
-}
+})
+
+-- C / C++
+require("lspconfig").clangd.setup({
+    capabilities = capabilities,
+})
