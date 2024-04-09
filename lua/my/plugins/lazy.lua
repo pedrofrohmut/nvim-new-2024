@@ -37,9 +37,11 @@ local plugins = {
     -- Lua line
     { "nvim-lualine/lualine.nvim" },
 
-    -- LSP & Mason
+    -- LSP
+    { "neovim/nvim-lspconfig" },
+
+    -- Mason
     {
-        "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
     },
@@ -49,6 +51,21 @@ local plugins = {
 
     -- Linter
     { "mfussenegger/nvim-lint" },
+
+    -- Completion
+    {
+        "hrsh7th/nvim-cmp",
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+    },
+
+    -- Snippets
+    {
+        { "L3MON4D3/LuaSnip", version = "2.2.0" },
+        "saadparwaiz1/cmp_luasnip",
+        "rafamadriz/friendly-snippets",
+    },
 }
 
 require("lazy").setup(plugins, opts)

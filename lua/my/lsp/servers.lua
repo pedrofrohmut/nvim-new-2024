@@ -1,3 +1,5 @@
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 -- Servers ---------------------------------------------------------------------
 
 -- Lua/Lua_LS
@@ -34,7 +36,8 @@ require("lspconfig").lua_ls.setup {
                 globals = { "vim", "use" }
             }
         }
-    }
+    },
+    capabilities = capabilities,
 }
 
 -- CSharp/Omnisharp
@@ -78,6 +81,8 @@ require("lspconfig").omnisharp.setup {
     -- Only run analyzers against open files when 'enableRoslynAnalyzers' is
     -- true
     analyze_open_documents_only = false,
+
+    capabilities = capabilities,
 }
 
 -- Typescript
@@ -85,4 +90,5 @@ require("lspconfig").omnisharp.setup {
 require 'lspconfig'.tsserver.setup {
     cmd = { "typescript-language-server", "--stdio" },
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+    capabilities = capabilities,
 }

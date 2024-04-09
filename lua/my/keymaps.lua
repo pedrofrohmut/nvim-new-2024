@@ -5,8 +5,8 @@ local map = vim.keymap.set
 -- Unsetters: Do nothing to remove unwanted default behavior
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("i", "<C-j>", "<Nop>")
-map("n", "R", "<Nop>")                -- Disable WTF mode
-map({ "n", "v" }, "<C-Space>", "<Nop>", { silent = true })
+map("n", "R", "<Nop>") -- Disable WTF mode
+map({ "n", "v", "i" }, "<C-Space>", "<Nop>", { silent = true })
 map("n", "<C-Enter>", "<Nop>")
 
 -- Indent
@@ -20,9 +20,9 @@ map("n", "<F2>", ":verbose map ")
 map("n", "<leader>fe", vim.cmd.Explore)
 
 -- Easy Register Copy/Cut to/from System Clipboard (:checkhealth if not working)
-map("v", "<leader>sy", "\"+y")
-map("v", "<leader>sd", "\"+d")
-map("n", "<leader>sp", "\"+p")
+map("v", "<leader>sy", '"+y')
+map("v", "<leader>sd", '"+d')
+map("n", "<leader>sp", '"+p')
 
 -- Do not override current register on v_paste
 map("v", "p", [["_dP]])
@@ -81,6 +81,7 @@ map("i", "({ ", "({  })<Esc>hi")
 map("n", "[b", vim.cmd.bprevious)
 map("n", "]b", vim.cmd.bnext)
 map("n", "<leader>bb", ":buffers<CR>:b ")
+map("n", "gb", "<cmd>b#<CR>")
 
 -- Tabs ------------------------------------------------------------------------
 
@@ -108,9 +109,9 @@ map("n", "<C-k>", "<C-w>k")
 map("n", "<C-l>", "<C-w>l")
 
 -- Resizing
-map("n", "<A-Up>", "3<C-w>+")    -- Up
-map("n", "<A-Down>", "3<C-w>-")  -- Down
-map("n", "<A-Left>", "3<C-w>>")  -- Left
+map("n", "<A-Up>", "3<C-w>+") -- Up
+map("n", "<A-Down>", "3<C-w>-") -- Down
+map("n", "<A-Left>", "3<C-w>>") -- Left
 map("n", "<A-Right>", "3<C-w><") -- Right
 
 -- Change current window to a new tab
