@@ -11,17 +11,21 @@ cmp.setup({
         end,
     },
     mapping = cmp.mapping.preset.insert({
+        -- Docs scrolling
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
         ["<C-d>"] = cmp.mapping.scroll_docs(4),
-        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<C-j>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+
+        -- Accept and abort completions
+        ["<C-j>"] = cmp.mapping.confirm({ select = false }),
         ["<C-k>"] = cmp.mapping.abort(),
-        ["<A-n>"] = cmp.mapping(function () ls.jump(1)  end, { "i", "s" }),
-        ["<A-p>"] = cmp.mapping(function () ls.jump(-1) end, { "i", "s" }),
+
+        -- Snippets jumping
+        ["<A-n>"] = cmp.mapping(function() ls.jump(1) end, { "i", "s" }),
+        ["<A-p>"] = cmp.mapping(function() ls.jump(-1) end, { "i", "s" }),
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = 'luasnip' }, -- For luasnip users.
+        { name = "luasnip" }, -- For luasnip users.
     }, {
         { name = "buffer" },
     }),

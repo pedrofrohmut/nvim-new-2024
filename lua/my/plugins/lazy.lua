@@ -66,6 +66,30 @@ local plugins = {
         "saadparwaiz1/cmp_luasnip",
         "rafamadriz/friendly-snippets",
     },
+
+    -- Autopairs
+    { "windwp/nvim-autopairs", event = "InsertEnter" },
+
+    -- Dot command now works with some plugins too
+    { "tpope/vim-repeat" },
+
+    -- Surrounder for Simple Stuff
+    { "tpope/vim-surround" },
+
+    -- Aligner
+    { "tommcdo/vim-lion" },
+
+    -- Commenter
+    { "tomtom/tcomment_vim" },
+
+    -- Git gutter
+    { "airblade/vim-gitgutter" },
+
+    -- Jump plugin like small version of easy motion
+    { "justinmk/vim-sneak" },
+
+    -- Emmet
+    { "mattn/emmet-vim" },
 }
 
 require("lazy").setup(plugins, opts)
