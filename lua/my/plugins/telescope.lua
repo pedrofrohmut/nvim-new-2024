@@ -40,6 +40,7 @@ map("n", "<leader>fg", builtin.live_grep)
 map("n", "<leader>fb", builtin.buffers)
 map("n", "<leader>fh", builtin.help_tags)
 map("n", "<leader>fk", builtin.keymaps)
+map("n", "<leader>fr", builtin.registers)
 
 -- Find files with hidden and gitignored
 map("n", "<leader>fa", function()

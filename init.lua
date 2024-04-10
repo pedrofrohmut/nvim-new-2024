@@ -8,7 +8,7 @@ require("my.treesitter")
 
 require("my.lsp.mason")
 require("my.lsp.servers")
-require("my.lsp.config")
+require("my.lsp.main")
 require("my.lsp.formatter")
 require("my.lsp.linter")
 require("my.lsp.completions")
