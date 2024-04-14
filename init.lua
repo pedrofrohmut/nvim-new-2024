@@ -22,3 +22,7 @@ require("my.plugins.surround")
 require("my.plugins.tcomment")
 require("my.plugins.sneak")
 require("my.plugins.emmet")
+
+if vim.g.neovide then
+    require("my.neovide")
+end
