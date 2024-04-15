@@ -67,6 +67,14 @@ local plugins = {
         "rafamadriz/friendly-snippets",
     },
 
+    -- Debugging
+    {
+        "mfussenegger/nvim-dap",
+        "rcarriga/nvim-dap-ui",
+        "nvim-neotest/nvim-nio",
+        "theHamsta/nvim-dap-virtual-text",
+    },
+
     -- Symbols (Tagbar)
     { "hedyhli/outline.nvim" },
 

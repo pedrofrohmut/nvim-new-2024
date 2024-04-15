@@ -4,6 +4,12 @@ local ls = require("luasnip")
 -- This is here to work with Friendly Snippets
 require("luasnip.loaders.from_vscode").lazy_load()
 
+-- Custome Snippets with LuaSnips
+-- how-to: make all.lua for global snips and rust.lua for rust snips
+require("luasnip.loaders.from_lua").lazy_load({
+    paths = "~/.config/nvim/snippets/"
+})
+
 cmp.setup({
     snippet = {
         expand = function(args)
@@ -16,7 +22,13 @@ cmp.setup({
         ["<C-d>"] = cmp.mapping.scroll_docs(4),
 
         -- Accept and abort completions
-        ["<C-j>"] = cmp.mapping.confirm({ select = false }),
+        ["<C-j>"] = cmp.mapping(function()
+            if cmp.visible() then
+                cmp.confirm({ select = true })
+            else
+                cmp.complete()
+            end
+        end),
         ["<C-k>"] = cmp.mapping.abort(),
 
         -- Snippets jumping
