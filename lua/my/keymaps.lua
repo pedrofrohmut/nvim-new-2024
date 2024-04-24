@@ -175,3 +175,7 @@ map("n", "<leader>st", f.remove_trailing)
 -- Terminal Mode ---------------------------------------------------------------
 
 map("n", "<leader>xx", ":terminal zsh<CR>")
+map("n", "<leader>xv", ":vs | terminal zsh<CR>")
+map("n", "<leader>xs", ":sp | terminal zsh<CR>")
+
+map("t", "<C-w><C-w>", "<C-\\><C-n><C-w>w")
