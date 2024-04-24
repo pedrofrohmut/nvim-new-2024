@@ -11,6 +11,9 @@ require("luasnip.loaders.from_lua").lazy_load({
 })
 
 cmp.setup({
+    completion = {
+        autocomplete = false
+    },
     snippet = {
         expand = function(args)
             require("luasnip").lsp_expand(args.body)

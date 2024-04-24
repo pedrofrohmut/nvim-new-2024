@@ -101,6 +101,9 @@ local plugins = {
 
     -- Emmet
     { "mattn/emmet-vim" },
+
+    -- JSX
+    { "maxmellon/vim-jsx-pretty" },
 }
 
 require("lazy").setup(plugins, opts)
