@@ -171,3 +171,7 @@ local f = require("my.utils.string-functions")
 
 -- Remove trailing spaces
 map("n", "<leader>st", f.remove_trailing)
+
+-- Terminal Mode ---------------------------------------------------------------
+
+map("n", "<leader>xx", ":terminal zsh<CR>")
