@@ -36,8 +36,7 @@ opt.wrap           = false
 opt.textwidth      = 100
 
 -- Files
---opt.fileformat     = "unix"
---vim.cmd [[ set ff=unix fixeol ]]
+--opt.fileformat     = "unix" -- Bugs lazy.nvim
 opt.backup         = false
 opt.writebackup    = false
 opt.autoread       = true
@@ -45,7 +44,7 @@ opt.autoread       = true
 -- CMP
 opt.completeopt    = { "menu", "menuone", "noselect" }
 
-vim.cmd [[ set path=$PWD/** ]]
-
--- New Stuff ------------------------------------------------------------------
---vim.g.netrw_liststyle = 3 -- Tree Style Netrw
+-- To Work with :find
+vim.cmd[[ set path=.,** ]] -- Set path
+vim.cmd[[ set path-=**/node_modules,.git/ ]]
+opt.wildmenu = true
