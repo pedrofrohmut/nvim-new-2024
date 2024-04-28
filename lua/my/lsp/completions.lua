@@ -10,6 +10,24 @@ require("luasnip.loaders.from_lua").lazy_load({
     paths = "~/.config/nvim/snippets/"
 })
 
+local lsp_completion = {
+    config = {
+        sources = cmp.config.sources({ { name = "nvim_lsp" } })
+    }
+}
+
+local path_completion = {
+    config = {
+        sources = cmp.config.sources({ { name = "path" } })
+    }
+}
+
+local snip_completion = {
+    config = {
+        sources = cmp.config.sources({ { name = "luasnip" } })
+    }
+}
+
 cmp.setup({
     completion = {
         autocomplete = false
@@ -29,19 +47,38 @@ cmp.setup({
             if cmp.visible() then
                 cmp.confirm({ select = true })
             else
-                cmp.complete()
+                cmp.complete(lsp_completion)
             end
         end),
         ["<C-k>"] = cmp.mapping.abort(),
+
+        -- File path
+        ["<C-i>"] = cmp.mapping(function()
+            if not cmp.visible() then
+                cmp.complete(path_completion)
+            end
+        end),
+
+        -- Snippets
+        ["<C-o>"] = cmp.mapping(function ()
+            if not cmp.visible() then
+                cmp.complete(snip_completion)
+            end
+        end),
 
         -- Snippets jumping
         ["<A-n>"] = cmp.mapping(function() ls.jump(1) end, { "i", "s" }),
         ["<A-p>"] = cmp.mapping(function() ls.jump(-1) end, { "i", "s" }),
     }),
     sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "luasnip" }, -- For luasnip users.
-    }, {
         { name = "buffer" },
     }),
 })
+
+vim.keymap.set("i", "<CR>", function()
+    if cmp.visible() then
+        return cmp.confirm({ select = true })
+    else
+        return "<CR>"
+    end
+end, { expr = true, replace_keycodes = true })
