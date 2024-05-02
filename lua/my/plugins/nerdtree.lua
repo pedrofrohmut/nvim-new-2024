@@ -22,10 +22,10 @@ vim.g.NERDTreeIgnore      = {
     ".settings",
 }
 vim.g.NERDTreeWinSize     = 36
-vim.g.NERDTreeHijackNetrw = 1
-vim.g.NERDTreeShowHidden  = 1
-vim.g.NERDTreeMinimalUI   = 1
-vim.g.NERDTreeMinimalMenu = 1
+vim.g.NERDTreeHijackNetrw = false
+vim.g.NERDTreeShowHidden  = true
+vim.g.NERDTreeMinimalUI   = true
+vim.g.NERDTreeMinimalMenu = true
 
 vim.keymap.set("n", "<leader>ft",
     "<cmd>NERDTreeFind<Enter><cmd>NERDTreeRefreshRoot<Enter>")
