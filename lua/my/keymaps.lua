@@ -17,8 +17,8 @@ map("n", "<F1>", ":vertical help ")
 map("n", "<F2>", ":verbose map ")
 
 -- File Explorer
-map("n", "<leader>fe", vim.cmd.Explore)
-map("n", "<leader>fp", ":find *")
+--map("n", "<leader>fe", vim.cmd.Explore)
+--map("n", "<leader>fp", ":find *")
 
 -- Easy Register Copy/Cut to/from System Clipboard (:checkhealth if not working)
 map("v", "<leader>sy", '"+y')

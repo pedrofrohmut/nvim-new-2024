@@ -104,6 +104,9 @@ local plugins = {
 
     -- JSX
     { "maxmellon/vim-jsx-pretty" },
+
+    -- Oil Vim (Buffer like File Management)
+    { "stevearc/oil.nvim" },
 }
 
 require("lazy").setup(plugins, opts)
