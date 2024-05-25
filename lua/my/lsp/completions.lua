@@ -53,7 +53,7 @@ cmp.setup({
         ["<C-k>"] = cmp.mapping.abort(),
 
         -- File path
-        ["<C-i>"] = cmp.mapping(function()
+        ["<C-f>"] = cmp.mapping(function()
             if not cmp.visible() then
                 cmp.complete(path_completion)
             end

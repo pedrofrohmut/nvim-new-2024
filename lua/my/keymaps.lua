@@ -29,7 +29,7 @@ map("n", "<leader>sp", '"+p')
 map("v", "p", [["_dP]])
 
 -- Fix C-i so you can keymap Tab Key
-map("n", "<C-i>", "<C-i>")
+--map("n", "<C-i>", "<C-i>")
 
 -- Redo on better keymapping
 map("n", "U", "<C-r>")

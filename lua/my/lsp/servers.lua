@@ -19,8 +19,8 @@ require("lspconfig").lua_ls.setup({
 
 -- CSharp/Omnisharp
 require("lspconfig").omnisharp.setup({
-    --cmd = { "omnisharp", "-lsp" },
-    cmd = { "dotnet", "/home/pedro/opt/omnisharp/OmniSharp.dll" },
+    -- cmd = { "dotnet", "/home/pedro/opt/omnisharp/OmniSharp.dll" }, -- From ref link above
+    cmd = { "/home/pedro/opt/omnisharp/OmniSharp", "-lsp" },
     capabilities = capabilities,
 })
 -- TODO: Config csharp with: Omnisharp-Extended-Lsp. at: https://github.com/Hoffs/omnisharp-extended-lsp.nvim

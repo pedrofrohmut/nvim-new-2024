@@ -17,7 +17,7 @@ opt.hlsearch       = false
 
 -- Appearance
 opt.signcolumn     = "yes:1"
-opt.colorcolumn    = { "81", "101" }
+opt.colorcolumn    = { "81", "121" }
 opt.cmdheight      = 1
 opt.termguicolors  = true
 opt.showmode       = false
