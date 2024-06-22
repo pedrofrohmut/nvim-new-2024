@@ -91,7 +91,7 @@ local plugins = {
     { "tommcdo/vim-lion" },
 
     -- Commenter
-    { "tomtom/tcomment_vim" },
+    -- { "tomtom/tcomment_vim" },
 
     -- Git gutter
     { "airblade/vim-gitgutter" },
