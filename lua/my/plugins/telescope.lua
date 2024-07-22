@@ -6,8 +6,19 @@ local themes = require("telescope.themes")
 require("telescope").setup({
     defaults = {
         file_ignore_patterns = {
-            "bin/", "obj/", "%.o", "%.out", "node_modules/", ".git/", "target/",
-            "_build", ".elixir_ls", "deps", "%.lock", "package-lock.json", "dist/",
+            "bin/",
+            "obj/",
+            "%.o",
+            "%.out",
+            "node_modules/",
+            ".git/",
+            "target/",
+            "_build",
+            ".elixir_ls",
+            "deps",
+            "%.lock",
+            "package-lock.json",
+            "dist/",
             ".next",
         },
         mappings = {
@@ -18,20 +29,20 @@ require("telescope").setup({
             n = {
                 ["<C-s>"] = actions.file_split,
                 ["<C-v>"] = actions.file_vsplit,
-            }
+            },
         },
     },
     pickers = {
         find_files = {
-            hidden = true
+            hidden = true,
         },
         buffers = {
             ignore_current_buffer = true,
             only_cwd = true,
-            sort_mru = true
-        }
+            sort_mru = true,
+        },
     },
-    extensions = {}
+    extensions = {},
 })
 require("telescope").load_extension("fzf")
 
@@ -64,12 +75,17 @@ map("n", "<C-s>", grep_search)
 
 map("n", "<C-f>", builtin.current_buffer_fuzzy_find)
 
+local no_preview_dropdown = themes.get_dropdown({
+    previewer = false,
+    layout_config = { width = 0.55, height = 0.45 },
+})
+
 map("n", "<C-q>", function()
-    builtin.find_files(themes.get_dropdown({ previewer = false }))
+    builtin.find_files(no_preview_dropdown)
 end)
 
 map("n", "<C-b>", function()
-    builtin.buffers(themes.get_dropdown({ previewer = false }))
+    builtin.buffers(no_preview_dropdown)
 end)
 
 -- LSP Mappings

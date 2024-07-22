@@ -30,3 +30,6 @@ require("lspconfig").tsserver.setup({ capabilities = capabilities })
 
 -- C / C++
 require("lspconfig").clangd.setup({ capabilities = capabilities })
+
+-- Java
+require("lspconfig").jdtls.setup({ capabilities = capabilities })
