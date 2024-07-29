@@ -21,7 +21,7 @@ vim.g.NERDTreeIgnore      = {
     "gradle",
     ".settings",
 }
-vim.g.NERDTreeWinSize     = 36
+vim.g.NERDTreeWinSize     = 48
 vim.g.NERDTreeHijackNetrw = false
 vim.g.NERDTreeShowHidden  = true
 vim.g.NERDTreeMinimalUI   = true
