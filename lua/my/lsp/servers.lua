@@ -32,10 +32,9 @@ require("lspconfig").tsserver.setup({ capabilities = capabilities })
 require("lspconfig").clangd.setup({ capabilities = capabilities })
 
 -- Java
-local root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
-
 require("lspconfig").jdtls.setup({
-    root_dir = root_dir,
+    root_dir = function()
+        vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
+    end,
     capabilities = capabilities,
 })
--- require("lspconfig").java_language_server.setup({ capabilities = capabilities })
