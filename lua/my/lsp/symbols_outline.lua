@@ -2,7 +2,7 @@ require("outline").setup({
     -- Your setup opts here (leave empty to use defaults)
 })
 
-vim.keymap.set("n", "<A-7>", vim.cmd.Outline)
+vim.keymap.set("n", "<leader>ts", vim.cmd.Outline)
 
 --require("symbols-outline").setup({
 --      position = "right",

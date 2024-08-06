@@ -29,5 +29,5 @@ vim.g.NERDTreeMinimalMenu = true
 
 vim.keymap.set("n", "<leader>ft",
     "<cmd>NERDTreeFind<Enter><cmd>NERDTreeRefreshRoot<Enter>")
-vim.keymap.set("n", "<A-8>",
+vim.keymap.set("n", "<leader>tt",
     "<cmd>NERDTreeToggle<Enter><cmd>NERDTreeRefreshRoot<Enter>")

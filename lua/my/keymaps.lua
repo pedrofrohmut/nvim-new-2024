@@ -119,7 +119,7 @@ map("n", "<Right>", "3<C-w><") -- Right
 map("n", "<leader>wt", "<C-w>T")
 
 -- Close other windows
-map("n", "<A-o>", "<C-w>o")
+-- map("n", "<A-o>", "<C-w>o")
 
 -- Closes every other window and every other tab
 map("n", "<leader>wo", function()
