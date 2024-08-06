@@ -110,10 +110,10 @@ map("n", "<C-k>", "<C-w>k")
 map("n", "<C-l>", "<C-w>l")
 
 -- Resizing
-map("n", "<A-Up>", "3<C-w>+") -- Up
-map("n", "<A-Down>", "3<C-w>-") -- Down
-map("n", "<A-Left>", "3<C-w>>") -- Left
-map("n", "<A-Right>", "3<C-w><") -- Right
+map("n", "<Up>", "3<C-w>+") -- Up
+map("n", "<Down>", "3<C-w>-") -- Down
+map("n", "<Left>", "3<C-w>>") -- Left
+map("n", "<Right>", "3<C-w><") -- Right
 
 -- Change current window to a new tab
 map("n", "<leader>wt", "<C-w>T")
@@ -139,16 +139,20 @@ map("n", "<A-a>", "k^") -- First character of previous line
 map("n", "<A-e>", "2$") -- Last character of next line
 
 -- Scrolling Vertical
-map("n", "<A-k>", "12<C-y>")
-map("n", "<A-j>", "12<C-e>")
+-- map("n", "<A-k>", "12<C-y>")
+-- map("n", "<A-j>", "12<C-e>")
+map("n", "<C-Up>", "12<C-y>")
+map("n", "<C-Down>", "12<C-e>")
 
 -- Scrolling Vertical 2x
 map("n", "<C-d>", "28<C-e>M")
 map("n", "<C-u>", "28<C-y>M")
 
 -- Scrolling Horizontal
-map("n", "<A-h>", "3zh")
-map("n", "<A-l>", "3zl")
+-- map("n", "<A-h>", "3zh")
+-- map("n", "<A-l>", "3zl")
+map("n", "<C-Left>", "3zh")
+map("n", "<C-Right>", "3zl")
 
 -- Center when jumping
 map("n", "G", "Gzz")
