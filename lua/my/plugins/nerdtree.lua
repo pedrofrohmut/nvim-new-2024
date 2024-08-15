@@ -1,4 +1,4 @@
-vim.g.NERDTreeIgnore      = {
+vim.g.NERDTreeIgnore = {
     "node_modules",
     "obj",
     "bin",
@@ -20,14 +20,14 @@ vim.g.NERDTreeIgnore      = {
     ".gradle",
     "gradle",
     ".settings",
+    ".project",
+    ".classpath",
 }
-vim.g.NERDTreeWinSize     = 48
+vim.g.NERDTreeWinSize = 48
 vim.g.NERDTreeHijackNetrw = false
-vim.g.NERDTreeShowHidden  = true
-vim.g.NERDTreeMinimalUI   = true
+vim.g.NERDTreeShowHidden = true
+vim.g.NERDTreeMinimalUI = true
 vim.g.NERDTreeMinimalMenu = true
 
-vim.keymap.set("n", "<leader>ft",
-    "<cmd>NERDTreeFind<Enter><cmd>NERDTreeRefreshRoot<Enter>")
-vim.keymap.set("n", "<leader>tt",
-    "<cmd>NERDTreeToggle<Enter><cmd>NERDTreeRefreshRoot<Enter>")
+vim.keymap.set("n", "<leader>ft", "<cmd>NERDTreeFind<Enter><cmd>NERDTreeRefreshRoot<Enter>")
+vim.keymap.set("n", "<leader>tt", "<cmd>NERDTreeToggle<Enter><cmd>NERDTreeRefreshRoot<Enter>")
