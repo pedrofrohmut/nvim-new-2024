@@ -34,8 +34,20 @@ require("lspconfig").clangd.setup({ capabilities = capabilities })
 -- Java
 require("lspconfig").jdtls.setup({
     -- root_dir = function()
-    --     vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
+    --     return vim.fn.getcwd()
     -- end,
-    root_dir = require'lspconfig'.util.root_pattern("pom.xml"),
+    root_dir = function()
+        local cwd = vim.fn.getcwd()
+        if vim.fn.filereadable(cwd .. "/pom.xml") == 1 then
+            return cwd
+        else
+            vim.notify("Error: pom.xml not found in the current working directory: " .. cwd, vim.log.levels.ERROR)
+            return nil -- Or handle the case where pom.xml is not found in cwd
+        end
+    end,
     capabilities = capabilities,
 })
+-- root_dir = require'lspconfig'.util.root_pattern("./pom.xml"),
+-- root_dir = function()
+--     vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
+-- end,
