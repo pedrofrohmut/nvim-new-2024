@@ -82,6 +82,7 @@ map("i", "({ ", "({  })<Esc>hi")
 map("n", "[b", vim.cmd.bprevious)
 map("n", "]b", vim.cmd.bnext)
 map("n", "<leader>bb", ":buffers<CR>:b ")
+map("n", "<leader>ba", ":%bd")
 map("n", "gb", "<cmd>b#<CR>")
 
 -- Tabs ------------------------------------------------------------------------
