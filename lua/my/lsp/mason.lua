@@ -7,7 +7,7 @@ require("mason-lspconfig").setup({
         "html",     -- HTML
         "lua_ls",   -- Lua
         "pyright",  -- Python
-        "tsserver", -- Typescript/Javascript
+        "ts_ls", -- Typescript/Javascript
     }
 
     --"omnisharp",            -- CSharp

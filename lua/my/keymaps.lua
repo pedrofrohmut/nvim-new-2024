@@ -1,3 +1,12 @@
+-- Modes for key mappings in Neovim:
+-- "i" = Insert mode
+-- "n" = Normal mode
+-- "v" = Visual mode
+-- "x" = Visual block mode
+-- "t" = Terminal mode
+-- "c" = Command mode
+-- "o" = Operator-pending mode
+
 vim.g.mapleader = " "
 
 local map = vim.keymap.set
@@ -38,17 +47,17 @@ map("n", "U", "<C-r>")
 map("n", "<C-c>", "<cmd>set cmdheight=1<Enter><cmd>echo ''<Enter>")
 
 -- Delete in insert mode
-map("i", "<C-l>", "<Del>")
-map("i", "<C-h>", "<BS>")
+map({ "i", "c" }, "<C-l>", "<Del>")
+map({ "i", "c" }, "<C-h>", "<BS>")
 
 -- Insert lines/spaces in Normal Mode
-map("n", "<Enter>", "i<CR><Esc>")
+map("n", "<C-Enter>", "i<CR><Esc>")
 
 -- Normal Enter/CR when needed
 map("n", "<A-Enter>", "<CR>")
 
 -- Unjoin lines (Opposite of J)
-map("n", "<C-Enter>", "WWi<Enter><Esc>")
+-- map("n", "<C-Enter>", "WWi<Enter><Esc>")
 
 -- Insert spaces in normal mode
 map("n", "<C-Space>", "i<Space><Esc>l")

@@ -7,30 +7,30 @@ require("luasnip.loaders.from_vscode").lazy_load()
 -- Custome Snippets with LuaSnips
 -- how-to: make all.lua for global snips and rust.lua for rust snips
 require("luasnip.loaders.from_lua").lazy_load({
-    paths = "~/.config/nvim/snippets/"
+    paths = "~/.config/nvim/snippets/",
 })
 
 local lsp_completion = {
     config = {
-        sources = cmp.config.sources({ { name = "nvim_lsp" } })
-    }
+        sources = cmp.config.sources({ { name = "nvim_lsp" } }),
+    },
 }
 
 local path_completion = {
     config = {
-        sources = cmp.config.sources({ { name = "path" } })
-    }
+        sources = cmp.config.sources({ { name = "path" } }),
+    },
 }
 
 local snip_completion = {
     config = {
-        sources = cmp.config.sources({ { name = "luasnip" } })
-    }
+        sources = cmp.config.sources({ { name = "luasnip" } }),
+    },
 }
 
 cmp.setup({
     completion = {
-        autocomplete = false
+        autocomplete = false,
     },
     snippet = {
         expand = function(args)
@@ -43,11 +43,12 @@ cmp.setup({
         ["<C-d>"] = cmp.mapping.scroll_docs(4),
 
         -- Accept and abort completions
+        ["<Enter>"] = cmp.mapping.confirm({ select = true }),
         ["<C-j>"] = cmp.mapping(function()
-            if cmp.visible() then
-                cmp.confirm({ select = true })
-            else
+            if not cmp.visible() then
                 cmp.complete(lsp_completion)
+            else
+                cmp.confirm({ select = true })
             end
         end),
         ["<C-k>"] = cmp.mapping.abort(),
@@ -60,7 +61,7 @@ cmp.setup({
         end),
 
         -- Snippets
-        ["<C-o>"] = cmp.mapping(function ()
+        ["<C-o>"] = cmp.mapping(function()
             if not cmp.visible() then
                 cmp.complete(snip_completion)
             end
@@ -75,10 +76,10 @@ cmp.setup({
     }),
 })
 
-vim.keymap.set("i", "<CR>", function()
-    if cmp.visible() then
-        return cmp.confirm({ select = true })
-    else
-        return "<CR>"
-    end
-end, { expr = true, replace_keycodes = true })
+-- vim.keymap.set("i", "<CR>", function()
+--     if cmp.visible() then
+--         return cmp.confirm({ select = true })
+--     else
+--         return "<CR>"
+--     end
+-- end, { expr = true, replace_keycodes = true })
