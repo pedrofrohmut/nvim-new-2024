@@ -25,6 +25,9 @@ autocmd("FileType", {
     command = "setlocal shiftwidth=2 ",
 })
 
+-- Default <Enter> on the quickfix list
+autocmd("FileType", { pattern = { "qf" }, command = "nnoremap <CR> <CR>" })
+
 -- CursorLine Group
 augroup("CursorLine", { clear = true })
 

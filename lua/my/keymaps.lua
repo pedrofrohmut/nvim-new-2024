@@ -51,7 +51,7 @@ map({ "i", "c" }, "<C-l>", "<Del>")
 map({ "i", "c" }, "<C-h>", "<BS>")
 
 -- Insert lines/spaces in Normal Mode
-map("n", "<C-Enter>", "i<CR><Esc>")
+map("n", "<Enter>", "i<Enter><Esc>")
 
 -- Normal Enter/CR when needed
 map("n", "<A-Enter>", "<CR>")
