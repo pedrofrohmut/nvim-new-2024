@@ -56,9 +56,6 @@ map("n", "<Enter>", "i<Enter><Esc>")
 -- Normal Enter/CR when needed
 map("n", "<A-Enter>", "<CR>")
 
--- Unjoin lines (Opposite of J)
--- map("n", "<C-Enter>", "WWi<Enter><Esc>")
-
 -- Insert spaces in normal mode
 map("n", "<C-Space>", "i<Space><Esc>l")
 
