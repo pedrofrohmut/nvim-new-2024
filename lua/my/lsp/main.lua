@@ -65,6 +65,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
-        map("n", "<leader>gf", vim.lsp.buf.format, opts)
+        map("n", "<leader>cf", vim.lsp.buf.format, opts)
     end,
 })

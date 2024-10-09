@@ -107,6 +107,10 @@ local plugins = {
 
     -- Oil Vim (Buffer like File Management)
     { "stevearc/oil.nvim" },
+
+    -- Java LSP - JDTLS
+    { "mfussenegger/nvim-jdtls" },
+    -- { "nvim-java/nvim-java" },
 }
 
 require("lazy").setup(plugins, opts)

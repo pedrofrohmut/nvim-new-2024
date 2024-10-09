@@ -22,6 +22,9 @@ vim.g.NERDTreeIgnore = {
     ".settings",
     ".project",
     ".classpath",
+    ".mvn",
+    "mvnw",
+    "mvnw.cmd",
 }
 vim.g.NERDTreeWinSize = 48
 vim.g.NERDTreeHijackNetrw = false
