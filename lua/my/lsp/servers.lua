@@ -32,13 +32,6 @@ require("lspconfig").ts_ls.setup({ capabilities = default_capabilities })
 require("lspconfig").clangd.setup({ capabilities = default_capabilities })
 
 -- Java
--- require("jdtls").start_or_attach({
---     cmd = { vim.fn.expand("$HOME/.local/share/nvim/mason/bin/jdtls") },
---     root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
---     capabilities = default_capabilities,
--- })
-
--- vim.api.nvim_buf_set_keymap(0, "n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", { noremap = true, silent = true })
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "java" },
     callback = function()
@@ -46,6 +39,15 @@ vim.api.nvim_create_autocmd("FileType", {
             cmd = { vim.fn.expand("$HOME/.local/share/nvim/mason/bin/jdtls") },
             root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
             capabilities = default_capabilities,
+            settings = {
+                java = {
+                    format = {
+                        settings = {
+                            profile = "GoogleStyle", -- Or "Eclipse" or any custom profile
+                        },
+                    },
+                },
+            },
         })
 
         local options = { noremap = true, silent = true }
@@ -66,7 +68,7 @@ vim.api.nvim_create_autocmd("FileType", {
             "n",
             "<leader>wl",
             "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>"
-        , options)
+            , options)
 
         vim.api.nvim_buf_set_keymap(0, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", options)
 
@@ -75,8 +77,6 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.api.nvim_buf_set_keymap(0, "n", "<leader>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", options)
 
         -- vim.api.nvim_buf_keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
-        -- vim.api.nvim_buf_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
-        -- vim.api.nvim_buf_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
         -- vim.api.nvim_buf_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
 
         -- -- Java specific
@@ -88,10 +88,6 @@ vim.api.nvim_create_autocmd("FileType", {
         -- vim.api.nvim_buf_keymap("v", "<leader>dm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>")
     end,
 })
-
--- autocmd("FileType", { pattern = { "qf" }, callback = function()
---     vim.api.nvim_buf_set_keymap(0, "n", "<CR>", "<CR>", { noremap = true, silent = true })
--- end})
 
 -- require("lspconfig").jdtls.setup({
 --     -- root_dir = function()
@@ -109,6 +105,4 @@ vim.api.nvim_create_autocmd("FileType", {
 --     capabilities = capabilities,
 -- })
 -- root_dir = require'lspconfig'.util.root_pattern("./pom.xml"),
--- root_dir = function()
---     vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
--- end,
+-- root_dir = function() vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]) end,
