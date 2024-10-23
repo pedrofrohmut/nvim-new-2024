@@ -59,6 +59,9 @@ map("n", "<A-Enter>", "<CR>")
 -- Insert spaces in normal mode
 map("n", "<C-Space>", "i<Space><Esc>l")
 
+-- Insert ; at line end (Lazy nerd)
+map("n", "<leader>;", "mzA;<Esc>`z")
+
 -- Quickfix
 map("n", "<leader>qq", vim.cmd.cclose)
 map("n", "<leader>qo", vim.cmd.copen)
