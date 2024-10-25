@@ -111,6 +111,9 @@ local plugins = {
     -- Java LSP - JDTLS
     { "mfussenegger/nvim-jdtls" },
     -- { "nvim-java/nvim-java" },
+
+    -- Zen mode
+    { "folke/zen-mode.nvim" },
 }
 
 require("lazy").setup(plugins, opts)

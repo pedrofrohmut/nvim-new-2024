@@ -24,6 +24,7 @@ require("my.plugins.surround")
 require("my.plugins.sneak")
 require("my.plugins.emmet")
 require("my.plugins.oil")
+require("my.plugins.zen_mode")
 
 if vim.g.neovide then
     require("my.neovide")
