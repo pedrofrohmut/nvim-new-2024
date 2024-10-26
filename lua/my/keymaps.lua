@@ -45,6 +45,7 @@ map("n", "U", "<C-r>")
 
 -- Reset command-line
 map("n", "<C-c>", "<cmd>set cmdheight=1<Enter><cmd>echo ''<Enter>")
+map("n", "<Esc>", "<cmd>set cmdheight=1<Enter><cmd>echo ''<Enter>")
 
 -- Delete in insert mode
 map({ "i", "c" }, "<C-l>", "<Del>")
