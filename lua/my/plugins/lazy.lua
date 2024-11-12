@@ -114,6 +114,9 @@ local plugins = {
 
     -- Zen mode
     { "folke/zen-mode.nvim" },
+
+    -- Colors on text
+    { "brenoprata10/nvim-highlight-colors" },
 }
 
 require("lazy").setup(plugins, opts)

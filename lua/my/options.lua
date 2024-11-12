@@ -24,6 +24,7 @@ opt.showmode       = false
 opt.number         = true
 opt.relativenumber = true
 opt.wildmenu       = true
+opt.termguicolors  = true
 
 -- Behavior
 opt.splitright     = true
