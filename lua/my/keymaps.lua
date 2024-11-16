@@ -166,7 +166,7 @@ map("n", "<C-Left>", "3zh")
 map("n", "<C-Right>", "3zl")
 
 -- Center when jumping
-map("n", "G", "Gzz")
+-- map("n", "G", "Gzz")
 map("n", "`0", "`0zz")
 map("n", "'0", "'0zz")
 

@@ -5,6 +5,15 @@ local default_capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- Link to consult on configurations
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 
+-- C / C++
+require("lspconfig").clangd.setup({ capabilities = default_capabilities })
+
+-- CSS
+require("lspconfig").cssls.setup({ capabilities = default_capabilities })
+
+-- HTML
+require("lspconfig").html.setup({ capabilities = default_capabilities })
+
 -- Lua/Lua_LS
 require("lspconfig").lua_ls.setup({
     settings = {
@@ -17,6 +26,14 @@ require("lspconfig").lua_ls.setup({
     capabilities = default_capabilities,
 })
 
+-- Python
+require("lspconfig").pyright.setup({ capabilities = default_capabilities })
+
+-- Typescript
+require("lspconfig").ts_ls.setup({ capabilities = default_capabilities })
+
+-- EXTRA SERVERS ###############################################################
+
 -- CSharp/Omnisharp
 require("lspconfig").omnisharp.setup({
     -- cmd = { "dotnet", "/home/pedro/opt/omnisharp/OmniSharp.dll" }, -- From ref link above
@@ -24,12 +41,6 @@ require("lspconfig").omnisharp.setup({
     capabilities = default_capabilities,
 })
 -- TODO: Config csharp with: Omnisharp-Extended-Lsp. at: https://github.com/Hoffs/omnisharp-extended-lsp.nvim
-
--- Typescript
-require("lspconfig").ts_ls.setup({ capabilities = default_capabilities })
-
--- C / C++
-require("lspconfig").clangd.setup({ capabilities = default_capabilities })
 
 -- Java
 vim.api.nvim_create_autocmd("FileType", {
@@ -67,8 +78,9 @@ vim.api.nvim_create_autocmd("FileType", {
             0,
             "n",
             "<leader>wl",
-            "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>"
-            , options)
+            "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
+            options
+        )
 
         vim.api.nvim_buf_set_keymap(0, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", options)
 
