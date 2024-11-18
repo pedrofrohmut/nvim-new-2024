@@ -86,7 +86,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
         vim.api.nvim_buf_set_keymap(0, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", options)
 
-        vim.api.nvim_buf_set_keymap(0, "n", "<leader>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", options)
+        vim.api.nvim_buf_set_keymap(0, "n", "<leader>cf", "<cmd>lua vim.lsp.buf.format()<CR>", options)
 
         -- vim.api.nvim_buf_keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
         -- vim.api.nvim_buf_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
