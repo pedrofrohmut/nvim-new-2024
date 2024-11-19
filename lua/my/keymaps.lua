@@ -69,6 +69,13 @@ map("n", "<leader>qo", vim.cmd.copen)
 map("n", "[f", vim.cmd.cprev)
 map("n", "]f", vim.cmd.cnext)
 
+-- Toggle wrap and linebreak
+map("n", "<leader>zl", function()
+    local is_wrap_on = vim.wo.wrap
+    vim.wo.wrap = not is_wrap_on
+    vim.wo.linebreak = not is_wrap_on
+end)
+
 -- MyPlugin: Closing cheracter -------------------------------------------------
 
 -- Closing character with <Enter> / <CR>
