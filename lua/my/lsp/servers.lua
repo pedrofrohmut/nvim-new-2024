@@ -14,6 +14,13 @@ require("lspconfig").cssls.setup({ capabilities = default_capabilities })
 -- HTML
 require("lspconfig").html.setup({ capabilities = default_capabilities })
 
+-- Emmet
+-- require("lspconfig").emmet_ls.setup({ capabilities = default_capabilities })
+-- require("lspconfig").emmet_language_server.setup({ capabilities = default_capabilities })
+
+-- Vuejs
+-- require("lspconfig").volar.setup({ capabilities = default_capabilities })
+
 -- Lua/Lua_LS
 require("lspconfig").lua_ls.setup({
     settings = {

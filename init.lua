@@ -15,7 +15,6 @@ require("my.lsp.mason")
 require("my.lsp.servers")
 require("my.lsp.symbols_outline")
 
--- require("my.plugins.tcomment")
 require("my.plugins.autopairs")
 require("my.plugins.emmet")
 require("my.plugins.highlight_colors")

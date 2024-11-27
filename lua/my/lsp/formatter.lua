@@ -3,6 +3,7 @@ require("conform").setup({
         css = { "prettier" },
         graphql = { "prettier" },
         html = { "prettier" },
+        vue = { "prettier" },
         javascript = { "prettier" },
         javascriptreact = { "prettier" },
         json = { "prettier" },

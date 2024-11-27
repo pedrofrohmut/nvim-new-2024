@@ -1,5 +1,5 @@
 local cmp = require("cmp")
-local ls = require("luasnip")
+local luasnip = require("luasnip")
 
 -- This is here to work with Friendly Snippets
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -66,20 +66,26 @@ cmp.setup({
                 cmp.complete(snip_completion)
             end
         end),
-
-        -- Snippets jumping
-        ["<A-n>"] = cmp.mapping(function() ls.jump(1) end, { "i", "s" }),
-        ["<A-p>"] = cmp.mapping(function() ls.jump(-1) end, { "i", "s" }),
+        ["<A-n>"] = cmp.mapping(function()
+            local forward = 1
+            if luasnip.jumpable(forward) then
+                luasnip.jump(forward)
+            else
+                vim.notify("No snippets available to jump to", vim.log.levels.WARN)
+            end
+        end),
+        ["<A-p>"] = cmp.mapping(function()
+            local backward = -1
+            if luasnip.jumpable(backward) then
+                luasnip.jump(backward)
+            else
+                vim.notify("No snippets available to jump to", vim.log.levels.WARN)
+            end
+        end),
     }),
     sources = cmp.config.sources({
         { name = "buffer" },
+        -- { name = "nvim_lsp" },
+        -- { name = "luasnip" },
     }),
 })
-
--- vim.keymap.set("i", "<CR>", function()
---     if cmp.visible() then
---         return cmp.confirm({ select = true })
---     else
---         return "<CR>"
---     end
--- end, { expr = true, replace_keycodes = true })

@@ -90,9 +90,6 @@ local plugins = {
     -- Aligner
     { "tommcdo/vim-lion" },
 
-    -- Commenter
-    -- { "tomtom/tcomment_vim" },
-
     -- Git gutter
     { "airblade/vim-gitgutter" },
 
