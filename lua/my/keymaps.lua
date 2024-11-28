@@ -74,6 +74,11 @@ map("n", "<leader>zl", function()
     local is_wrap_on = vim.wo.wrap
     vim.wo.wrap = not is_wrap_on
     vim.wo.linebreak = not is_wrap_on
+    if is_wrap_on then
+        vim.notify("Line wrap is off")
+    else
+        vim.notify("Line wrap is on")
+    end
 end)
 
 -- MyPlugin: Closing cheracter -------------------------------------------------
