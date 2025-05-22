@@ -127,10 +127,10 @@ map("n", "<C-p>", ":tabprevious<CR>", { silent = true })
 -- Windows ---------------------------------------------------------------------
 
 -- Move focus between windows
-map("n", "<C-h>", "<C-w>h")
-map("n", "<C-j>", "<C-w>j")
-map("n", "<C-k>", "<C-w>k")
-map("n", "<C-l>", "<C-w>l")
+-- map("n", "<C-h>", "<C-w>h")
+-- map("n", "<C-j>", "<C-w>j")
+-- map("n", "<C-k>", "<C-w>k")
+-- map("n", "<C-l>", "<C-w>l")
 
 -- Resizing
 map("n", "<Up>", "3<C-w>+") -- Up
@@ -164,8 +164,10 @@ map("n", "<A-e>", "2$") -- Last character of next line
 -- Scrolling Vertical
 -- map("n", "<A-k>", "12<C-y>")
 -- map("n", "<A-j>", "12<C-e>")
-map("n", "<C-Up>", "12<C-y>")
-map("n", "<C-Down>", "12<C-e>")
+-- map("n", "<C-Up>", "12<C-y>")
+-- map("n", "<C-Down>", "12<C-e>")
+map("n", "<C-k>", "12<C-y>")
+map("n", "<C-j>", "12<C-e>")
 
 -- Scrolling Vertical 2x
 map("n", "<C-d>", "28<C-e>M")
@@ -174,8 +176,10 @@ map("n", "<C-u>", "28<C-y>M")
 -- Scrolling Horizontal
 -- map("n", "<A-h>", "3zh")
 -- map("n", "<A-l>", "3zl")
-map("n", "<C-Left>", "3zh")
-map("n", "<C-Right>", "3zl")
+-- map("n", "<C-Left>", "3zh")
+-- map("n", "<C-Right>", "3zl")
+map("n", "<C-h>", "3zh")
+map("n", "<C-l>", "3zl")
 
 -- Center when jumping
 -- map("n", "G", "Gzz")
