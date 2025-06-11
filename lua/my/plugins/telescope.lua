@@ -71,7 +71,7 @@ local grep_search = function()
 end
 
 map("n", "<leader>fs", grep_search)
-map("n", "<C-s>", grep_search)
+-- map("n", "<C-s>", grep_search)
 
 map("n", "<C-f>", builtin.current_buffer_fuzzy_find)
 

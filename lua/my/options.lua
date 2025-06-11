@@ -34,7 +34,7 @@ opt.cursorline     = true
 opt.mouse          = "a"
 opt.updatetime     = 250
 opt.wrap           = false
-opt.textwidth      = 100
+--opt.textwidth      = 100
 
 -- Files
 --opt.fileformat     = "unix" -- Bugs lazy.nvim
