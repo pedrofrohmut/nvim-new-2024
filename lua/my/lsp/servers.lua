@@ -49,6 +49,9 @@ require("lspconfig").omnisharp.setup({
 })
 -- TODO: Config csharp with: Omnisharp-Extended-Lsp. at: https://github.com/Hoffs/omnisharp-extended-lsp.nvim
 
+-- Go with gopls
+require("lspconfig").gopls.setup({ capabilities = default_capabilities })
+
 -- Java
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "java" },

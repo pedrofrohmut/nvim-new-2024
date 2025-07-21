@@ -15,6 +15,7 @@ require("mason-lspconfig").setup({
     --"elixirls",             -- Elixir
     --"hls",                  -- Haskell
     --"rust_analyzer",        -- Rust
+    --"gopls"                 -- Golang
 
     --"java_language_server", -- Java
 })

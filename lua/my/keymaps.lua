@@ -204,6 +204,9 @@ local f = require("my.utils.string-functions")
 -- Remove trailing spaces
 map("n", "<leader>st", f.remove_trailing)
 
+-- Change word case
+map("n", "<leader>u", 'g~iw')
+
 -- Terminal Mode ---------------------------------------------------------------
 
 map("n", "<leader>xx", ":terminal zsh<CR>")
