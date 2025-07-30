@@ -51,7 +51,7 @@ cmp.setup({
                 cmp.confirm({ select = true })
             end
         end),
-        ["<C-k>"] = cmp.mapping.abort(),
+        -- ["<C-k>"] = cmp.mapping.abort(),
 
         -- File path
         ["<C-f>"] = cmp.mapping(function()
@@ -61,9 +61,11 @@ cmp.setup({
         end),
 
         -- Snippets
-        ["<C-o>"] = cmp.mapping(function()
+        ["<C-k>"] = cmp.mapping(function()
             if not cmp.visible() then
                 cmp.complete(snip_completion)
+            else
+                cmp.abort()
             end
         end),
         ["<A-n>"] = cmp.mapping(function()
