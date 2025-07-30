@@ -17,7 +17,7 @@ highlight(0, "TablineSel", { fg = "#88ffff", bg = "#323232" })
 highlight(0, "Tabline", { fg = "#989898", bg = "#252525" })
 
 -- Highlight tabs
-highlight(0, "HighlightTab", { fg = "#000000", bg = "#666666" })
+highlight(0, "HighlightTab", { fg = "#000000", bg = "#6666cc" })
 
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
     pattern = '*',

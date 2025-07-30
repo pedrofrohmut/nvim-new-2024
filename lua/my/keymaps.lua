@@ -173,6 +173,10 @@ map("n", "<C-j>", "12<C-e>")
 map("n", "<C-d>", "28<C-e>M")
 map("n", "<C-u>", "28<C-y>M")
 
+
+-- Scrolling Vertical (InsertMode)
+map("i", "<C-;>", "<Esc>zzgi")
+
 -- Scrolling Horizontal
 -- map("n", "<A-h>", "3zh")
 -- map("n", "<A-l>", "3zl")

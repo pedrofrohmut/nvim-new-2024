@@ -74,7 +74,7 @@ vim.api.nvim_create_autocmd("FileType", {
         local options = { noremap = true, silent = true }
         vim.api.nvim_buf_set_keymap(0, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", options)
         vim.api.nvim_buf_set_keymap(0, "n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", options)
-        vim.api.nvim_buf_set_keymap(0, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", options)
+        vim.api.nvim_buf_set_keymap(0, "n", "gy", "<cmd>lua vim.lsp.buf.implementation()<CR>", options)
         vim.api.nvim_buf_set_keymap(0, "n", "gr", '<cmd>lua vim.lsp.buf.references() && vim.cmd("copen")<CR>', options)
 
         vim.api.nvim_buf_set_keymap(0, "n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", options)
