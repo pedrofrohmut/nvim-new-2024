@@ -109,6 +109,9 @@ local plugins = {
     { "mfussenegger/nvim-jdtls" },
     -- { "nvim-java/nvim-java" },
 
+    -- Navic - Statubar breadcrumbs
+    { "SmiteshP/nvim-navic" },
+
     -- Zen mode
     { "folke/zen-mode.nvim" },
 

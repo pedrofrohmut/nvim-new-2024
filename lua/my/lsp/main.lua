@@ -66,5 +66,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
         map("n", "<leader>cf", vim.lsp.buf.format, opts)
+
+        -- Get the client from the event
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+
+        -- Attach navic if the client supports document symbols
+        local navic = require("nvim-navic")
+        if client.server_capabilities.documentSymbolProvider then
+            navic.attach(client, ev.buf)
+        end
     end,
 })

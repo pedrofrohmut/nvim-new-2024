@@ -18,7 +18,6 @@ autocmd("FileType", {
     command = "setlocal shiftwidth=4",
 })
 
--- Add to your ~/.config/nvim/init.lua
 vim.api.nvim_create_autocmd("FileType", {
     group = "FileTypeGroup",
     pattern = "go",

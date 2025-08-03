@@ -12,6 +12,7 @@ require("my.lsp.formatter")
 require("my.lsp.linter")
 require("my.lsp.main")
 require("my.lsp.mason")
+require("my.lsp.navic")
 require("my.lsp.servers")
 require("my.lsp.symbols_outline")
 
@@ -25,6 +26,7 @@ require("my.plugins.sneak")
 require("my.plugins.surround")
 require("my.plugins.telescope")
 require("my.plugins.zen_mode")
+require("my.plugins.vim_gitgutter")
 
 if vim.g.neovide then
     require("my.neovide")

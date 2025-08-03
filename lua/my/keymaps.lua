@@ -63,11 +63,9 @@ map("n", "<C-Space>", "i<Space><Esc>l")
 -- Insert ; at line end (Lazy nerd)
 map("n", "<leader>;", "mzA;<Esc>`z")
 
--- Quickfix
+-- Quickfix (use [q ]q to next and prev)
 map("n", "<leader>qq", vim.cmd.cclose)
 map("n", "<leader>qo", vim.cmd.copen)
-map("n", "[f", vim.cmd.cprev)
-map("n", "]f", vim.cmd.cnext)
 
 -- Toggle wrap and linebreak
 map("n", "<leader>zl", function()
@@ -162,29 +160,27 @@ map("n", "<A-a>", "k^") -- First character of previous line
 map("n", "<A-e>", "2$") -- Last character of next line
 
 -- Scrolling Vertical
+map("n", "<C-k>", "12<C-y>")
+map("n", "<C-j>", "12<C-e>")
 -- map("n", "<A-k>", "12<C-y>")
 -- map("n", "<A-j>", "12<C-e>")
 -- map("n", "<C-Up>", "12<C-y>")
 -- map("n", "<C-Down>", "12<C-e>")
-map("n", "<C-k>", "12<C-y>")
-map("n", "<C-j>", "12<C-e>")
 
 -- Scrolling Vertical 2x
 map("n", "<C-d>", "28<C-e>M")
 map("n", "<C-u>", "28<C-y>M")
 
-
 -- Scrolling Vertical (InsertMode)
-map("i", "<C-;>", "<C-o>zz")
--- map("i", "<C-;>", "<Esc>zzgi")
+map("i", "<C-b>", "<C-o>zz")
 
 -- Scrolling Horizontal
+map("n", "<C-h>", "3zh")
+map("n", "<C-l>", "3zl")
 -- map("n", "<A-h>", "3zh")
 -- map("n", "<A-l>", "3zl")
 -- map("n", "<C-Left>", "3zh")
 -- map("n", "<C-Right>", "3zl")
-map("n", "<C-h>", "3zh")
-map("n", "<C-l>", "3zl")
 
 -- Center when jumping
 -- map("n", "G", "Gzz")
