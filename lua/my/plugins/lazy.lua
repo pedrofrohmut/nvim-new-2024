@@ -23,7 +23,7 @@ local plugins = {
     -- Telescope
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.6",
+        tag = "0.1.8",
         dependencies = { "nvim-lua/plenary.nvim" },
     },
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -69,11 +69,17 @@ local plugins = {
 
     -- Debugging
     {
-        "mfussenegger/nvim-dap",
         "rcarriga/nvim-dap-ui",
-        "nvim-neotest/nvim-nio",
-        "theHamsta/nvim-dap-virtual-text",
+        dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
     },
+
+    -- OLD Debugging
+    -- {
+    -- "mfussenegger/nvim-dap",
+    -- "rcarriga/nvim-dap-ui",
+    -- "nvim-neotest/nvim-nio",
+    -- "theHamsta/nvim-dap-virtual-text",
+    -- },
 
     -- Symbols (Tagbar)
     { "hedyhli/outline.nvim" },

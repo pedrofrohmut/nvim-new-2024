@@ -1,11 +1,13 @@
+vim.g.mapleader = " "
+
 require("my.plugins.lazy")
 
-require("my.autocmds")
 require("my.colors")
-require("my.debugging")
-require("my.keymaps")
 require("my.options")
+require("my.keymaps")
+require("my.autocmds")
 require("my.treesitter")
+require("my.debugging")
 
 require("my.lsp.completions")
 require("my.lsp.formatter")

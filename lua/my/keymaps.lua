@@ -7,8 +7,6 @@
 -- "c" = Command mode
 -- "o" = Operator-pending mode
 
-vim.g.mapleader = " "
-
 local map = vim.keymap.set
 
 -- Unsetters: Do nothing to remove unwanted default behavior
