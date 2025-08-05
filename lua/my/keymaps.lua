@@ -77,6 +77,20 @@ map("n", "<leader>zl", function()
     end
 end)
 
+-- Language-Aware Inline Comment
+map("n", "gcl", function()
+    local cs = vim.bo.commentstring
+    local symbol = cs:sub(0, -4)
+
+    local curr_line = vim.fn.getline(".")
+
+    if curr_line == "" then
+        vim.api.nvim_feedkeys("i" .. symbol .. " ", "n", false)
+    else
+        vim.api.nvim_feedkeys("A " .. symbol .. " ", "n", false)
+    end
+end)
+
 -- MyPlugin: Closing cheracter -------------------------------------------------
 
 -- Closing character with <Enter> / <CR>
@@ -171,6 +185,8 @@ map("n", "<C-u>", "28<C-y>M")
 
 -- Scrolling Vertical (InsertMode)
 map("i", "<C-b>", "<C-o>zz")
+map("i", "<C-x><C-k>", "<C-o>12<C-y>")
+map("i", "<C-x><C-j>", "<C-o>12<C-e>")
 
 -- Scrolling Horizontal
 map("n", "<C-h>", "3zh")
@@ -204,7 +220,7 @@ local f = require("my.utils.string-functions")
 map("n", "<leader>st", f.remove_trailing)
 
 -- Change word case
-map("n", "<leader>u", 'g~iw')
+map("n", "<leader>u", "g~iw")
 
 -- Terminal Mode ---------------------------------------------------------------
 
